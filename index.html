@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ScaleUp Media - Digital Marketing, Lead Generation, Social Media Management, Google Business Profile and Growth Strategy.">
+<title>ScaleUp Media | Digital Marketing & Growth Agency</title>
+<style>
+:root{
+  --navy:#0B1F3A;--navy2:#102B52;--blue:#2F80ED;--silver:#C7CDD4;
+  --light:#F3F5F7;--white:#fff;--text:#1d2939;--muted:#667085;
+  --green:#25D366;--border:#e6eaf0;--shadow:0 15px 40px rgba(11,31,58,.12)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6;background:#fff}
+a{text-decoration:none;color:inherit}.container{width:min(1140px,92%);margin:auto}
+section{padding:80px 0}.section-tag{color:var(--blue);font-weight:800;font-size:.82rem;letter-spacing:1.6px;text-transform:uppercase}
+.section-title{font-size:clamp(2rem,4vw,3rem);color:var(--navy);line-height:1.15;margin:8px 0 15px}.section-sub{color:var(--muted);max-width:720px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:8px;font-weight:700;transition:.25s;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(47,128,237,.25)}
+.btn-outline{border-color:#fff;color:#fff}.btn-outline:hover{background:#fff;color:var(--navy)}
+.btn-light{background:#fff;color:var(--navy);border-color:var(--border)}.btn-light:hover{border-color:var(--blue)}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bottom:1px solid #e6eaf0;box-shadow:0 4px 18px rgba(11,31,58,.06)}
+.nav-wrap{height:72px;display:flex;align-items:center;justify-content:space-between;color:var(--navy)}
+.brand{display:flex;align-items:center}.brand img{height:48px;width:auto;max-width:180px;object-fit:contain}.brand span{color:var(--blue)}
+.nav-links{display:flex;gap:22px;align-items:center;font-size:.92rem;font-weight:800}.nav-links a{opacity:.9}.nav-links a:hover{color:#7eb6ff}
+.menu-btn{display:none;background:#0B1F3A;border:0;color:#fff;font-size:1.5rem;width:44px;height:44px;border-radius:8px;line-height:1;cursor:pointer;align-items:center;justify-content:center}
+/* hero */
+.hero{padding:150px 0 90px;background:linear-gradient(135deg,var(--navy) 0%,#102a4d 60%,#123b73 100%);color:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}.badge{display:inline-block;padding:7px 12px;border:1px solid rgba(255,255,255,.2);border-radius:99px;background:rgba(255,255,255,.06);font-size:.78rem;letter-spacing:.7px}
+.hero h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.04;margin:18px 0}.hero h1 span{color:#79b6ff}.hero p{color:#d8e2ef;max-width:650px;font-size:1.08rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.trust{display:flex;gap:25px;margin-top:38px;flex-wrap:wrap}.trust b{display:block;font-size:1.4rem}.trust small{color:#b8c7d8}
+.hero-card{background:#fff;color:var(--text);padding:28px;border-radius:18px;box-shadow:0 25px 60px rgba(0,0,0,.25);position:relative}.hero-card:before{content:"FREE";position:absolute;right:20px;top:20px;color:var(--blue);font-size:.8rem;font-weight:900;letter-spacing:1px}.audit-item{padding:14px 0;border-bottom:1px solid var(--border)}.audit-item:last-child{border:0}.check{color:#20a464;font-weight:bold}
+/* cards */
+.grid{display:grid;gap:22px}.services{grid-template-columns:repeat(3,1fr);margin-top:35px}.card{border:1px solid var(--border);border-radius:14px;padding:26px;background:#fff;transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d4e4fa}.icon{width:48px;height:48px;border-radius:12px;background:#eaf3ff;color:var(--blue);display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px}.card h3{color:var(--navy);margin-bottom:8px}.card p{color:var(--muted);font-size:.95rem}
+.alt{background:var(--light)}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.feature-list{list-style:none;margin-top:20px}.feature-list li{padding:9px 0;border-bottom:1px solid var(--border)}.feature-list li:before{content:"✓";color:var(--blue);font-weight:bold;margin-right:10px}
+/* process */
+.process{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:38px}.step{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 15px}.step-num{color:var(--blue);font-weight:900;font-size:1.5rem}.step h4{font-size:.92rem;color:var(--navy);margin:5px 0}.step p{font-size:.78rem;color:var(--muted)}
+/* packages */
+.packages{grid-template-columns:repeat(4,1fr);align-items:stretch;margin-top:35px}.price-card{border:1px solid var(--border);border-radius:16px;padding:25px;background:#fff;position:relative}.price-card.featured{border:2px solid var(--blue);transform:scale(1.03);box-shadow:var(--shadow)}.popular{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;border-radius:99px;padding:5px 12px;font-size:.7rem;font-weight:bold}.price-card h3{color:var(--navy)}.price{font-size:2rem;font-weight:900;color:var(--navy);margin:12px 0}.price small{font-size:.8rem;color:var(--muted);font-weight:normal}.price-card ul{list-style:none;margin:15px 0}.price-card li{padding:7px 0;font-size:.87rem;border-bottom:1px solid #eef1f5}.price-card li:before{content:"✓";color:var(--blue);font-weight:bold;margin-right:8px}
+/* audit */
+.audit-box{background:linear-gradient(135deg,var(--navy),#153a6d);color:#fff;border-radius:18px;padding:42px}.audit-box p{color:#c9d7e8}.audit-box form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.audit-box input,.audit-box select,.contact-form input,.contact-form textarea{width:100%;padding:13px;border-radius:7px;border:1px solid var(--border);font:inherit}.audit-box input,.audit-box select{background:#fff}.full{grid-column:1/-1}.note{font-size:.78rem;color:#b8c7d8}
+/* testimonials */
+.testimonials{grid-template-columns:repeat(3,1fr);margin-top:30px}.quote{font-size:2rem;color:var(--blue);line-height:1}.person{margin-top:18px;font-weight:800;color:var(--navy)}.role{font-size:.82rem;color:var(--muted)}
+/* faq */
+.faq{max-width:850px;margin:30px auto 0}.faq details{border:1px solid var(--border);padding:18px 20px;border-radius:10px;margin-bottom:10px}.faq summary{cursor:pointer;font-weight:800;color:var(--navy)}.faq p{padding-top:12px;color:var(--muted)}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px}.contact-info{background:var(--navy);color:#fff;border-radius:16px;padding:34px}.contact-info p{color:#c7d4e3;margin:14px 0}.contact-info a{color:#fff}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.contact-form textarea{min-height:130px;resize:vertical}.contact-form button{border:0}
+footer{background:#07182d;color:#b8c7d8;padding:28px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{font-weight:900;color:#fff}.footer-brand span{color:var(--blue)}
+.float-whatsapp{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-size:1.6rem;box-shadow:0 10px 25px rgba(0,0,0,.2);z-index:999}
+.small-note{font-size:.8rem;color:var(--muted);margin-top:12px}
+@media(max-width:980px){.hero-grid,.two-col,.contact-grid{grid-template-columns:1fr}.services{grid-template-columns:repeat(2,1fr)}.packages{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(3,1fr)}.testimonials{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.logo-brand img{height:52px;max-width:190px}section{padding:62px 0}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:18px 4%;flex-direction:column;align-items:flex-start;box-shadow:0 12px 24px rgba(11,31,58,.1)}.nav-links.show{display:flex}.menu-btn{display:flex!important}.hero{padding-top:125px}.hero h1{font-size:2.7rem}.services,.packages,.testimonials,.contact-form,.audit-box form{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.price-card.featured{transform:none}.footer-row{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-wrap">
+    <a class="brand" href="#home" aria-label="ScaleUp Media Home"><img src="logo.png" alt="ScaleUp Media Logo" onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'" loading="eager"><span id="logoFallback" style="display:none;font-weight:900;font-size:1.35rem;color:var(--navy)">Scale<span style="color:var(--blue)">Up</span> Media</span></a>
+    <button class="menu-btn" aria-label="Open navigation menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</button>
+    <div class="nav-links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+      <a href="#process">Process</a><a href="#packages">Packages</a><a href="#audit">Free Audit</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+<div class="container hero-grid">
+  <div>
+    <span class="badge">DIGITAL MARKETING • LEAD GENERATION • BUSINESS GROWTH</span>
+    <h1>Scale Your Business.<br><span>Grow With Strategy.</span></h1>
+    <p>ScaleUp Media helps businesses build visibility, generate enquiries and create measurable digital growth through social media, Google, content and performance marketing.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#audit">Get Free Marketing Audit</a>
+      <a class="btn btn-outline" href="#services">Explore Services</a>
+    </div>
+    <div class="trust">
+      <div><b>Strategy</b><small>Business-first approach</small></div>
+      <div><b>Growth</b><small>Focused on opportunities</small></div>
+      <div><b>Support</b><small>Clear communication</small></div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <h2 style="color:var(--navy);margin-bottom:8px">Free Marketing Audit</h2>
+    <p style="color:var(--muted);margin-bottom:15px">A preliminary external review of your publicly visible digital presence.</p>
+    <div class="audit-item"><span class="check">✓</span> Google Business Profile review</div>
+    <div class="audit-item"><span class="check">✓</span> Social media observations</div>
+    <div class="audit-item"><span class="check">✓</span> Content opportunities</div>
+    <div class="audit-item"><span class="check">✓</span> Lead generation opportunities</div>
+    <a href="#audit" class="btn btn-primary" style="width:100%;margin-top:20px">Request Your Free Audit</a>
+  </div>
+</div>
+</header>
+
+<section id="about">
+<div class="container two-col">
+  <div>
+    <span class="section-tag">About ScaleUp Media</span>
+    <h2 class="section-title">Your Digital Growth Partner</h2>
+    <p class="section-sub">We combine marketing strategy, content, local visibility and lead generation to help businesses build a stronger online presence and create opportunities for sustainable growth.</p>
+    <ul class="feature-list">
+      <li>Customized marketing strategies</li>
+      <li>Clear scope and professional workflow</li>
+      <li>Content, Google and advertising solutions</li>
+      <li>Monthly reporting and performance review</li>
+    </ul>
+  </div>
+  <div class="card" style="padding:35px">
+    <span class="section-tag">Our Approach</span>
+    <h2 style="color:var(--navy);margin:8px 0 15px">Problem → Opportunity → Strategy → Execution</h2>
+    <p style="color:var(--muted)">We don't believe every business needs every service. We first understand the business and then recommend a suitable scope based on goals, market, budget and current digital presence.</p>
+    <div style="margin-top:20px;padding:18px;background:var(--light);border-radius:10px;color:var(--navy);font-weight:800">Goal: Build a long-term, repeatable and professional growth system.</div>
+  </div>
+</div>
+</section>
+
+<section class="alt" id="services">
+<div class="container">
+  <span class="section-tag">What We Do</span>
+  <h2 class="section-title">Our Core Services</h2>
+  <p class="section-sub">Choose individual services or a customized growth package based on your business requirements.</p>
+  <div class="grid services">
+    <div class="card"><div class="icon">📍</div><h3>Google Business Profile</h3><p>Profile review, business information optimization, service updates, posts, photos and local visibility opportunities.</p></div>
+    <div class="card"><div class="icon">📱</div><h3>Social Media Management</h3><p>Content planning, graphic posts, captions, scheduling and professional social media management.</p></div>
+    <div class="card"><div class="icon">🎯</div><h3>Lead Generation</h3><p>Campaign strategy, lead generation funnels, audience testing and enquiry-focused marketing.</p></div>
+    <div class="card"><div class="icon">📊</div><h3>Meta & Google Ads</h3><p>Campaign setup, monitoring and optimization. Advertising spend is separate from agency service fees.</p></div>
+    <div class="card"><div class="icon">🎬</div><h3>Reels & Video Content</h3><p>Reel strategy, creation, editing and shooting as a separately scoped service.</p></div>
+    <div class="card"><div class="icon">🌐</div><h3>Landing Pages & Websites</h3><p>Landing pages for campaigns and business websites for long-term online presence.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+  <span class="section-tag">How We Work</span>
+  <h2 class="section-title">A Clear Client Journey</h2>
+  <div class="process">
+    <div class="step"><div class="step-num">01</div><h4>Discovery</h4><p>Understand goals, audience and current challenges.</p></div>
+    <div class="step"><div class="step-num">02</div><h4>Free Audit</h4><p>Review publicly visible digital opportunities.</p></div>
+    <div class="step"><div class="step-num">03</div><h4>Strategy</h4><p>Recommend a suitable growth approach.</p></div>
+    <div class="step"><div class="step-num">04</div><h4>Proposal</h4><p>Define scope, deliverables and investment.</p></div>
+    <div class="step"><div class="step-num">05</div><h4>Onboarding</h4><p>Collect required information and approvals.</p></div>
+    <div class="step"><div class="step-num">06</div><h4>Growth</h4><p>Execute, review, optimize and report.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="alt" id="packages">
+<div class="container">
+  <span class="section-tag">Service Packages</span>
+  <h2 class="section-title">Choose the Right Growth Level</h2>
+  <p class="section-sub">Final scope and pricing can be customized after understanding your business needs.</p>
+  <div class="grid packages">
+    <div class="price-card">
+      <h3>Starter</h3>
+      <ul><li>Basic social media support</li><li>Content planning</li><li>Selected posts</li><li>Monthly update</li></ul>
+      <a href="#contact" class="btn btn-light" style="width:100%">Get Details</a>
+    </div>
+    <div class="price-card featured">
+      <div class="popular">POPULAR</div><h3>Growth</h3>
+      <ul><li>Social media management</li><li>Google Business support</li><li>Content strategy</li><li>Lead generation support</li><li>Monthly report</li></ul>
+      <a href="#contact" class="btn btn-primary" style="width:100%">Get Details</a>
+    </div>
+    <div class="price-card">
+      <h3>Performance</h3>
+      <ul><li>Campaign management</li><li>Lead generation</li><li>Audience testing</li><li>Optimization</li><li>Reporting</li></ul>
+      <a href="#contact" class="btn btn-light" style="width:100%">Get Details</a>
+    </div>
+    <div class="price-card">
+      <h3>Complete</h3>
+      <ul><li>Complete social media management</li><li>Reel strategy & creation</li><li>Reel shooting/editing*</li><li>Lead generation & ads</li><li>Growth strategy & reporting</li></ul>
+      <a href="#contact" class="btn btn-light" style="width:100%">Get Details</a>
+    </div>
+  </div>
+  <p class="small-note">* Shooting, reel collaborations, influencers, ad spend and third-party production costs may be separately quoted depending on the agreed scope.</p>
+</div>
+</section>
+
+<section id="audit">
+<div class="container">
+  <div class="audit-box">
+    <span class="section-tag" style="color:#79b6ff">Complimentary Review</span>
+    <h2 style="font-size:clamp(2rem,4vw,3rem);margin:8px 0">Request Your Free Marketing Audit</h2>
+    <p>Share your business details and we will review publicly visible areas of your digital presence for preliminary opportunities.</p>
+    <form onsubmit="sendAudit(event)">
+      <input required id="auditName" placeholder="Your Name">
+      <input required id="auditBusiness" placeholder="Business Name">
+      <input required id="auditPhone" placeholder="WhatsApp / Phone Number">
+      <input id="auditLink" placeholder="Website / Instagram / Google Business Link">
+      <select class="full" id="auditGoal"><option>Primary Marketing Goal</option><option>More Leads</option><option>More Calls / Enquiries</option><option>More Bookings</option><option>Brand Awareness</option><option>More Website Traffic</option></select>
+      <button class="btn btn-primary full" type="submit">Request Free Audit</button>
+      <p class="note full">By submitting, you agree to be contacted regarding this request. This preliminary audit is informational and does not guarantee specific marketing results.</p>
+    </form>
+  </div>
+</div>
+</section>
+
+<section id="testimonials">
+<div class="container">
+  <span class="section-tag">Client Feedback</span>
+  <h2 class="section-title">What Clients May Experience</h2>
+  <p class="section-sub"> The testimonials below client-approved feedback.</p>
+  <div class="grid testimonials">
+    <div class="card"><div class="quote">“</div><p>"This agency completely changed our online presence. Our sales increased in just three months. Highly recommended!" <br/ ><br/ >"या एजन्सीने आमची ऑनलाईन ओळख पूर्णपणे बदलली. अवघ्या तीन महिन्यांत आमची विक्री वाढ  झाली. नक्कीच संपर्क करा!"</p><div class="person">Harish Jadhav</div><div class="role">Owner HR Proffessional Academy</div></div>
+    <div class="card"><div class="quote">“</div><p>"Amazing results! Their social media ads helped us reach thousands of new customers easily." <br/><br/> "अप्रतिम निकाल! त्यांच्या सोशल मीडिया जाहिरातींमुळे आम्हाला हजारो नवीन ग्राहकांपर्यंत पोहोचणे सोपे झाले."</p><div class="person">Yogesh Pandhare</div><div class="role">Freelancer</div></div>
+    <div class="card"><div class="quote">“</div><p>Very professional and budget-friendly. They brought regular leads to our business through Meta ads." <br/> <br/> "अतिशय व्यावसायिक आणि बजेटमध्ये बसणारी सेवा. त्यांनी मेटा जाहिरातींद्वारे आमच्या व्यवसायाला नियमित ग्राहक मिळवून दिले.</p><div class="person">Suraj Bhosale Name</div><div class="role">Suman Mobile</div></div>
+  </div>
+</div>
+</section>
+
+<section class="alt">
+<div class="container">
+  <span class="section-tag">Frequently Asked Questions</span>
+  <h2 class="section-title">Questions Clients Often Ask</h2>
+  <div class="faq">
+    <details><summary>Who pays the Google or Meta ad budget?</summary><p>The client generally pays the advertising spend separately. ScaleUp Media's management/service fee is separate from the actual advertising budget unless otherwise agreed in writing.</p></details>
+    <details><summary>Do you guarantee leads, sales or rankings?</summary><p>No. Marketing outcomes depend on multiple factors. We focus on strategy, implementation, testing and optimization, but specific results cannot be guaranteed.</p></details>
+    <details><summary>Do you need our social media password?</summary><p>Where possible, secure role-based account access is preferred over sharing passwords. Access requirements depend on the platform and agreed services.</p></details>
+    <details><summary>How long should we work together?</summary><p>Digital marketing often requires consistent testing and optimization. A minimum initial engagement period may be recommended depending on the scope and business objectives.</p></details>
+    <details><summary>Do you create custom proposals?</summary><p>Yes. After a discovery discussion and review, the recommended scope can be customized for the client's goals and requirements.</p></details>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <span class="section-tag">Let's Grow</span>
+  <h2 class="section-title">Start Your Digital Growth Journey</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>ScaleUp Media</h2>
+      <p>Professional digital marketing solutions for businesses that want a stronger online presence and better growth opportunities.</p>
+      <p><b>📞 Phone</b><br><a href="tel:+919370093821">+91 9370093821</a></p>
+      <p><b>✉ Email</b><br><a href="mailto:suhasdsan@gmail.com">suhasdsan@gmail.com</a></p>
+      <p><b>🌐 Website</b><br><a href="https://scaleup-media.github.io/">scaleup-media.github.io</a></p>
+    </div>
+    <form class="contact-form" onsubmit="sendContact(event)">
+      <input required id="cname" placeholder="Your Name">
+      <input required id="cbusiness" placeholder="Business Name">
+      <input required id="cphone" placeholder="Phone Number">
+      <input id="cemail" type="email" placeholder="Email Address">
+      <textarea required class="full" id="cmessage" placeholder="Tell us about your business and marketing requirement"></textarea>
+      <button class="btn btn-primary full" type="submit">Send Enquiry on WhatsApp</button>
+    </form>
+  </div>
+</div>
+</section>
+
+<footer>
+<div class="container footer-row">
+  <div><div class="footer-brand">Scale<span>Up</span> Media</div><small>Digital Marketing • Lead Generation • Business Growth</small></div>
+  <small>© <span id="year"></span> ScaleUp Media. All rights reserved. • <a href="https://scaleup-media.github.io/">scaleup-media.github.io</a></small>
+</div>
+</footer>
+
+<a class="float-whatsapp" href="https://wa.me/919370093821?text=Hello%20ScaleUp%20Media%2C%20I%20want%20to%20discuss%20digital%20marketing%20for%20my%20business." target="_blank" aria-label="WhatsApp">✆</a>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+function wa(message){window.open('https://wa.me/919370093821?text='+encodeURIComponent(message),'_blank')}
+function sendAudit(e){
+ e.preventDefault();
+ const name=document.getElementById('auditName').value,business=document.getElementById('auditBusiness').value,phone=document.getElementById('auditPhone').value,link=document.getElementById('auditLink').value,goal=document.getElementById('auditGoal').value;
+ wa(`Hello ScaleUp Media,%0A%0AI would like a Free Marketing Audit.%0AName: ${name}%0ABusiness: ${business}%0APhone: ${phone}%0AOnline Link: ${link}%0AGoal: ${goal}`);
+}
+function sendContact(e){
+ e.preventDefault();
+ const name=document.getElementById('cname').value,business=document.getElementById('cbusiness').value,phone=document.getElementById('cphone').value,email=document.getElementById('cemail').value,msg=document.getElementById('cmessage').value;
+ wa(`Hello ScaleUp Media,%0A%0AName: ${name}%0ABusiness: ${business}%0APhone: ${phone}%0AEmail: ${email}%0ARequirement: ${msg}`);
+}
+</script>
+</body>
+</html>
