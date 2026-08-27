@@ -30,7 +30,44 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bott
 .hero{padding:150px 0 90px;background:linear-gradient(135deg,var(--navy) 0%,#102a4d 60%,#123b73 100%);color:#fff;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}.badge{display:inline-block;padding:7px 12px;border:1px solid rgba(255,255,255,.2);border-radius:99px;background:rgba(255,255,255,.06);font-size:.78rem;letter-spacing:.7px}
 .hero h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.04;margin:18px 0}.hero h1 span{color:#79b6ff}.hero p{color:#d8e2ef;max-width:650px;font-size:1.08rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.trust{display:flex;gap:25px;margin-top:38px;flex-wrap:wrap}.trust b{display:block;font-size:1.4rem}.trust small{color:#b8c7d8}
-.hero-card{background:#fff;color:var(--text);padding:28px;border-radius:18px;box-shadow:0 25px 60px rgba(0,0,0,.25);position:relative}.hero-card:before{content:"FREE";position:absolute;right:20px;top:20px;color:var(--blue);font-size:.8rem;font-weight:900;letter-spacing:1px}.audit-item{padding:14px 0;border-bottom:1px solid var(--border)}.audit-item:last-child{border:0}.check{color:#20a464;font-weight:bold}
+.hero-card{background:#fff;color:var(--text);padding:28px;border-radius:18px;box-shadow:0 25px 60px rgba(0,0,0,.25);position:relative}.hero-card-badge {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.hero-card-badge .old-price {
+    position: relative;
+    color: #000000; /* किंमत स्पष्ट दिसण्यासाठी पूर्ण काळा रंग */
+    font-size: 1.25rem; /* किंमत मोठी केली आहे */
+    font-weight: 900;
+    padding: 0 4px;
+    display: inline-block;
+    z-index: 1; /* यामुळे अंक क्रॉसच्या वर येतील */
+}
+/* 'X' क्रॉसचा कोड जो आता ३९९ च्या मागे दिसेल */
+.hero-card-badge .old-price::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    right: 0;
+    bottom: 2px;
+    z-index: -1; /* क्रॉस मागे पाठवला */
+    /* फिकट लाल रंग (#ff8a8a) वापरला आहे जेणेकरून अंक स्पष्ट दिसतील */
+    background: 
+        linear-gradient(to top right, transparent 46%, #ff8a8a 49%, #ff8a8a 51%, transparent 54%),
+        linear-gradient(to bottom right, transparent 46%, #ff8a8a 49%, #ff8a8a 51%, transparent 54%);
+}
+.hero-card-badge .free-text {
+    color: var(--blue); 
+}
+.audit-item{padding:14px 0;border-bottom:1px solid var(--border)}.audit-item:last-child{border:0}.check{color:#20a464;font-weight:bold}
 /* cards */
 .grid{display:grid;gap:22px}.services{grid-template-columns:repeat(3,1fr);margin-top:35px}.card{border:1px solid var(--border);border-radius:14px;padding:26px;background:#fff;transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d4e4fa}.icon{width:48px;height:48px;border-radius:12px;background:#eaf3ff;color:var(--blue);display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px}.card h3{color:var(--navy);margin-bottom:8px}.card p{color:var(--muted);font-size:.95rem}
 .alt{background:var(--light)}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.feature-list{list-style:none;margin-top:20px}.feature-list li{padding:9px 0;border-bottom:1px solid var(--border)}.feature-list li:before{content:"✓";color:var(--blue);font-weight:bold;margin-right:10px}
@@ -83,6 +120,10 @@ footer{background:#07182d;color:#b8c7d8;padding:28px 0}.footer-row{display:flex;
     </div>
   </div>
   <div class="hero-card">
+    <div class="hero-card-badge">
+        <span class="old-price">₹399</span>
+        <span class="free-text">FREE</span>
+    </div>
     <h2 style="color:var(--navy);margin-bottom:8px">Free Marketing Audit</h2>
     <p style="color:var(--muted);margin-bottom:15px">A preliminary external review of your publicly visible digital presence.</p>
     <div class="audit-item"><span class="check">✓</span> Google Business Profile review</div>
@@ -233,7 +274,7 @@ footer{background:#07182d;color:#b8c7d8;padding:28px 0}.footer-row{display:flex;
       <h2>ScaleUp Media</h2>
       <p>Professional digital marketing solutions for businesses that want a stronger online presence and better growth opportunities.</p>
       <p><b>📞 Phone</b><br><a href="tel:+919370093821">+91 9370093821</a></p>
-      <p><b>✉ Email</b><br><a href="mailto:suhasdsan@gmail.com">suhasdsan@gmail.com</a></p>
+      <p><b>✉ Email</b><br><a href="mailto:scaleupmedia.solutions@gmail.com">scaleupmedia.solutions@gmail.com</a></p>
       <p><b>🌐 Website</b><br><a href="https://scaleup-media.github.io/">scaleup-media.github.io</a></p>
     </div>
     <form class="contact-form" onsubmit="sendContact(event)">
